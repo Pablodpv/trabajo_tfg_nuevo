@@ -9,49 +9,11 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class HardWaveController extends AbstractController
 {
-    /**
-     * Verifica si hay una sesión activa
-     */
     private function checkLogin(Request $request): bool
     {
-        if (!$request->getSession()->get('user_logged')) {
-            return false;
-        }
-        return true;
+        return (bool) $request->getSession()->get('user_logged');
     }
 
-    /**
-     * PORTADA DE LA TIENDA (localhost:8000/home)
-     */
-    #[Route('/home', name: 'app_home')]
-    public function index(Request $request): Response
-    {
-        // Si no está logueado, lo mandamos a la raíz (/) que es el login
-        if (!$this->checkLogin($request)) {
-            return $this->redirectToRoute('app_login');
-        }
-
-        return $this->render('hardwave/index.html.twig', [
-            'products' => [
-                [
-                    'name' => 'RTX 4080',
-                    'price' => 1200,
-                    'img' => 'https://via.placeholder.com/200',
-                    'desc' => 'Tarjeta gráfica de alto rendimiento para gaming 4K.'
-                ],
-                [
-                    'name' => 'PC Gaming',
-                    'price' => 2500,
-                    'img' => 'https://via.placeholder.com/200',
-                    'desc' => 'PC preconfigurado con refrigeración líquida y luces RGB.'
-                ]
-            ]
-        ]);
-    }
-
-    /**
-     * SECCIÓN DE HARDWARE (localhost:8000/hardware)
-     */
     #[Route('/hardware', name: 'app_hardware')]
     public function hardware(Request $request): Response
     {
@@ -64,14 +26,50 @@ class HardWaveController extends AbstractController
                 [
                     'name' => 'Placa Base ASUS Prime',
                     'price' => 150,
-                    'img' => 'https://via.placeholder.com/200',
+                    'img' => 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=500',
                     'desc' => 'Socket AM4 perfecta para procesadores Ryzen.'
                 ],
                 [
                     'name' => 'Memoria RAM 16GB DDR4',
                     'price' => 75,
-                    'img' => 'https://via.placeholder.com/200',
+                    'img' => 'https://images.unsplash.com/photo-1562976540-1502c2145186?w=500',
                     'desc' => 'Módulo de alta velocidad con disipador de aluminio.'
+                ],
+                [
+                    'name' => 'Procesador Intel i9-13900K',
+                    'price' => 580,
+                    'img' => 'https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=500',
+                    'desc' => '24 núcleos y 32 hilos para el máximo rendimiento.'
+                ],
+                [
+                    'name' => 'SSD Samsung 980 Pro 1TB',
+                    'price' => 110,
+                    'img' => 'https://images.unsplash.com/photo-1544652478-6653e09f18a2?w=500',
+                    'desc' => 'Velocidad NVMe M.2 de cuarta generación.'
+                ],
+                [
+                    'name' => 'Ratón Logitech G Pro X',
+                    'price' => 125,
+                    'img' => 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500',
+                    'desc' => 'El ratón inalámbrico preferido por los profesionales.'
+                ],
+                [
+                    'name' => 'Teclado Mecánico Corsair K70',
+                    'price' => 160,
+                    'img' => 'https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?w=500',
+                    'desc' => 'Switches Cherry MX Red y retroiluminación RGB.'
+                ],
+                [
+                    'name' => 'Monitor MSI Optix 27"',
+                    'price' => 320,
+                    'img' => 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500',
+                    'desc' => 'Panel curvo de 165Hz para gaming fluido.'
+                ],
+                [
+                    'name' => 'Fuente EVGA 750W Gold',
+                    'price' => 95,
+                    'img' => 'https://images.unsplash.com/photo-1587202377496-03f0e0112441?w=500',
+                    'desc' => 'Eficiencia 80 Plus Gold totalmente modular.'
                 ]
             ]
         ]);

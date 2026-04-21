@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controller;
 
 use App\Entity\User;
@@ -11,9 +12,6 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class SecurityController extends AbstractController
 {
-    /**
-     * RUTA RAÍZ: Ahora el login es lo primero que carga (localhost:8000/)
-     */
     #[Route('/', name: 'app_login')]
     public function login(
         Request $request,
@@ -22,9 +20,9 @@ class SecurityController extends AbstractController
     ): Response {
         $session = $request->getSession();
 
-        // Si el usuario ya está logueado, lo mandamos directo a la tienda
+        // Si ya está logueado y entra a la raíz, lo mandamos a HARDWARE
         if ($session->get('user_logged')) {
-            return $this->redirectToRoute('app_home');
+            return $this->redirectToRoute('app_hardware');
         }
 
         $error = null;
@@ -43,8 +41,8 @@ class SecurityController extends AbstractController
                 $session->set('user_logged', true);
                 $session->set('user_email', $email);
 
-                // Redirigimos a la nueva ruta de la tienda tras el éxito
-                return $this->redirectToRoute('app_home');
+                // ¡ESTA ES LA LÍNEA CLAVE! Redirigimos a hardware
+                return $this->redirectToRoute('app_hardware');
             }
 
             $this->addFlash('error', 'Correo o contraseña incorrectos');
