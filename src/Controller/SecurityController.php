@@ -41,7 +41,7 @@ class SecurityController extends AbstractController
                 $session->set('user_logged', true);
                 $session->set('user_email', $email);
 
-                // ¡ESTA ES LA LÍNEA CLAVE! Redirigimos a hardware
+  
                 return $this->redirectToRoute('app_hardware');
             }
 
