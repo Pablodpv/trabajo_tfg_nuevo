@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h2>Tu Carrito HardWave</h2>
+    <div class="card shadow-sm p-4">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                {# Aquí iría el bucle del carrito #}
+                <tr>
+                    <td colspan="4" class="text-center text-muted">El carrito está vacío por ahora.</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="text-end">
+            <a href="{{ path('app_home') }}" class="btn btn-secondary">Seguir comprando</a>
+        </div>
+    </div>
+{% endblock %}

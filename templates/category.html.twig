@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h2 class="mb-4">Sección: {{ category_name }}</h2>
+    <div class="row">
+        {% for p in products %}
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="{{ p.img }}" class="card-img-top" alt="{{ p.name }}">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">{{ p.name }}</h5>
+                        <p class="card-text text-muted small">{{ p.desc }}</p>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="badge bg-success fs-6">{{ p.price }} €</span>
+                            <button class="btn btn-outline-primary btn-sm">Añadir 🛒</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            <div class="alert alert-info">No hay componentes en esta sección.</div>
+        {% endfor %}
+    </div>
+{% endblock %}

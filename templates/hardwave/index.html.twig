@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="p-5 mb-4 bg-dark text-white rounded-3 shadow">
+        <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold">Bienvenido a HardWave</h1>
+            <p class="col-md-8 fs-4">La mejor selección de hardware, periféricos y ordenadores montados con la garantía de expertos.</p>
+           <a href="{{ path('app_hardware') }}" class="btn btn-info btn-lg fw-bold">Ver Componentes</a>
+        </div>
+    </div>
+
+    <h3 class="mb-4 fw-bold">Productos Destacados</h3>
+    <div class="row">
+        {% for p in products %}
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="{{ p.img }}" class="card-img-top" style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">{{ p.name }}</h5>
+                        <p class="card-text text-muted">{{ p.desc }}</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="h5 mb-0 text-primary">{{ p.price }}€</span>
+                            <button class="btn btn-outline-primary">Ver más</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
