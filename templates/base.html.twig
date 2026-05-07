@@ -46,15 +46,15 @@
                             <a class="nav-link" href="{{ path('app_perifericos') }}">Periféricos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">PCs Montados</a>
+                            <a class="nav-link" href="{{ path('app_pcs_montados') }}">PCs Montados</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-warning" href="#">Ofertas</a>
                         </li>
                     </ul>
 
-<a class="nav-link position-relative" href="{{ path('app_carrito') }}">
-    🛒 Carrito
+<a class="nav-link position-relative text-light" href="{{ path('app_carrito') }}">
+    Carrito 🛒 
   
     {% if app.session.get('carrito')|length > 0 %}
         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">

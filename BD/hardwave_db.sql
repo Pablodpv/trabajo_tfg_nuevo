@@ -145,4 +145,16 @@ INSERT INTO `product` (`id`, `name`, `description`, `price`, `category`, `image`
 (37, 'Asus VG248QG', 'Monitor 165Hz para gaming competitivo', 209.99, 'monitor', 'asusvg.webp'),
 (38, 'MSI Optix G241', 'Monitor gaming IPS 144Hz', 179.99, 'monitor', 'msi241.webp'),
 (39, 'Philips 243V7QDSB', 'Monitor económico Full HD', 119.99, 'monitor', 'philips.webp'),
-(40, 'Samsung Smart Monitor M5', 'Monitor inteligente con apps integradas', 269.99, 'monitor', 'm5.webp');
+(40, 'Samsung Smart Monitor M5', 'Monitor inteligente con apps integradas', 269.99, 'monitor', 'm5.webp'),
+
+-- PCS MONTADOS
+(41, 'NZXT Player One', 'PC gaming con Intel Core i5 y RTX 3050 ideal para 1080p', 999.99, 'pc', 'nzxt-player-one.webp'), -- https://nzxt.com/products/player-one
+(42, 'NZXT Player Two', 'Ordenador gaming con RTX 4070 preparado para 1440p', 1699.99, 'pc', 'nzxt-player-two.webp'), -- https://nzxt.com/collection/player-pc
+(43, 'Corsair Vengeance i7500', 'PC gaming premium con Intel i7 y RTX 5070', 2399.99, 'pc', 'corsair-i7500.webp'), -- https://www.corsair.com/us/en/c/gaming-computers
+(44, 'Corsair One i500', 'PC compacto de alto rendimiento con refrigeración líquida', 3499.99, 'pc', 'corsair-one-i500.webp'), -- https://www.corsair.com/us/en/p/gaming-computers/cs-9050083-na/corsair-one-i500-gaming-pc-metal-dark-cs-9050083-na
+(45, 'HP Victus 15L', 'PC gaming económico para esports y gaming en Full HD', 799.99, 'pc', 'hp-victus.webp'), -- https://www.hp.com/us-en/shop/mdp/desktops/victus-by-hp-3074457345617615170--1
+(46, 'Lenovo Legion Tower 5', 'PC gaming Ryzen 7 con RTX 4070 y excelente refrigeración', 1799.99, 'pc', 'legion5.webp'), -- https://www.lenovo.com/us/en/c/desktops/legion-desktops/legion-t-series
+(47, 'Alienware Aurora R16', 'Ordenador gaming premium con diseño compacto y RTX 4080', 2899.99, 'pc', 'aurora-r16.webp'), -- https://www.dell.com/en-us/shop/gaming-and-games/alienware-aurora-r16-gaming-desktop/spd/alienware-aurora-r16-desktop
+(48, 'ASUS ROG G22CH', 'PC gaming compacto de ASUS Republic of Gamers', 2199.99, 'pc', 'rog-g22.webp'), -- https://rog.asus.com/desktops/small-form-factor/rog-g22ch-series
+(49, 'MSI Infinite RS', 'PC extremo para gaming 4K y creación de contenido', 3299.99, 'pc', 'msi-infinite.webp'), -- https://www.msi.com/Desktop/Infinite-RS-14th
+(50, 'Acer Predator Orion 7000', 'Ordenador gaming de alto rendimiento con Intel i9 y RTX 4090', 3999.99, 'pc', 'predator7000.webp'); -- https://www.acer.com/us-en/predator/desktops-and-all-in-ones/predator-orion/orion-7000
